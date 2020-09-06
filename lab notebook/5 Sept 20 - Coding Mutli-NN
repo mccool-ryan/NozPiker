@@ -1,0 +1,16 @@
+5 Sept 20 - Coding Mutli-NN
+
+Goal: Develop a jupyter notebook that will separate proteins into categories based off of classificatins available on their respective pdb page. 
+
+Could possibly use PyPDB to find relavent symmetry information on proteins based on MS data. (documentation: http://www.wgilpin.com/pypdb_docs/html/)
+  pypdb.make_query()
+    Seems most promising
+    
+    
+After not really getting anywhere, I have decided urllib.request paired with regular expression operations is my best bet.
+  I'll use this to pull up a specific pdb webpage and return the Global Symmetry.
+  This will serve as the class for each protein from the MS so we can train our first NN
+  Here is a RegeEx sandbox: https://regex101.com/r/cO8lqs/24
+    Great for quickly making sure you're query is pulling what it is supposed to
+  https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285
+    #also a great explainer for how to find code between two points
