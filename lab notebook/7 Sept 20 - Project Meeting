@@ -1,0 +1,26 @@
+7 Sept 20 - Project Meeting
+
+Qs
+  Which files are for prepping the images and data from the MS?
+    MassSpecProteinScrape
+      Takes excel from MS data, does structural search using GemPro, only pulls best structures. Also takes the names (so this is where I would switch taking
+    But maybe change the names by hand, there are only thirteen
+    
+  How do I update my GitHub from my remote terminal?
+    ls -a
+      Makes sure git is initialized 
+      if not there:
+    git init
+      if initialized:
+    git status
+      tells if things have been changed
+    git add file_name_not_updated
+      adds anything you list to the repository
+    git commit
+      make notes as to what chagnes you made
+    git push
+      pushes (finalizes) changes
+     
+  
+  
+  Need to google how to update my repository from GitHub to terminal
