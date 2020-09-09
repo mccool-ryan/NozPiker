@@ -1,0 +1,129 @@
+8 Sept 20 - Edits 1
+
+Goals: to succesffuly make the first model for the symmetry separation
+
+Succesfully implemented symmetry fetch and integrated results into the store variable.
+NN1 is now successfully running, although the data is slightly overtfit. Will try simplifying network as the data is pretty straightforward.
+
+Model attempt 2:
+  Changed learning rate from 0.001 to 0.00001
+  Smoother but still not a great fit and still over fitting.
+  Will try removing second hidden layer
+  
+Model attempt 3:
+  Validation still between .85 and .875
+  Train still at 0.975
+  Will try adding third hidden layer
+  
+Model attempt 4:
+  Same results
+  Removing first and third hidden layers
+
+Model attempt 5:
+  Validation maybe slightly better (closer to .9)
+  Test is around 0.2 loss now
+  Will try second and third
+  
+Model 6:
+  Horrible idea
+  Everything worse. Going back to all three and adding fourth
+
+Model 7:
+  accuracy
+	training         	 (min:    0.325, max:    0.977, cur:    0.977)
+	validation       	 (min:    0.840, max:    0.917, cur:    0.917)
+Loss
+	training         	 (min:    0.150, max:    1.844, cur:    0.150)
+	validation       	 (min:    0.364, max:    0.886, cur:    0.365)
+  
+  
+Will trying reducing density of 3rd layer
+
+Model 8:
+  accuracy
+	training         	 (min:    0.324, max:    0.973, cur:    0.973)
+	validation       	 (min:    0.644, max:    0.903, cur:    0.903)
+Loss
+	training         	 (min:    0.178, max:    1.597, cur:    0.178)
+	validation       	 (min:    0.408, max:    1.003, cur:    0.408)
+  
+Not much better. Will try increasing all densities and keeping gradual decrease from layer to layer
+
+Model 9:
+  accuracy
+	training         	 (min:    0.801, max:    1.000, cur:    1.000)
+	validation       	 (min:    0.838, max:    0.920, cur:    0.900)
+Loss
+	training         	 (min:    0.005, max:    0.812, cur:    0.005)
+	validation       	 (min:    0.368, max:    0.556, cur:    0.556)
+
+Loss actually gets worse at end
+Definitely overfitting. Will scale down density from 5-2k to 4-1k
+
+Model 10:
+  
+accuracy
+	training         	 (min:    0.818, max:    1.000, cur:    1.000)
+	validation       	 (min:    0.840, max:    0.915, cur:    0.903)
+Loss
+	training         	 (min:    0.012, max:    0.628, cur:    0.012)
+	validation       	 (min:    0.350, max:    0.499, cur:    0.485)
+
+  
+Loss was creeping up at end still and validation accuracy dropped some. 
+Going to change learning rate to 0.0001 and going to reduce neurons in first layer
+
+Model 11:
+  accuracy
+	training         	 (min:    0.851, max:    1.000, cur:    1.000)
+	validation       	 (min:    0.895, max:    0.929, cur:    0.909)
+Loss
+	training         	 (min:    0.000, max:    0.988, cur:    0.000)
+	validation       	 (min:    0.279, max:    0.751, cur:    0.751)
+  
+Loss got worse, still overfitting.
+Will try adding back in neurons at hidden 1
+
+model 12:
+
+accuracy
+	training         	 (min:    0.816, max:    1.000, cur:    1.000)
+	validation       	 (min:    0.912, max:    0.926, cur:    0.926)
+Loss
+	training         	 (min:    0.000, max:    0.940, cur:    0.000)
+	validation       	 (min:    0.255, max:    0.663, cur:    0.640)
+  
+10 ist still best model, will revert back to that and add in extra layer
+
+model 13:
+  
+accuracy
+	training         	 (min:    0.773, max:    1.000, cur:    1.000)
+	validation       	 (min:    0.838, max:    0.909, cur:    0.903)
+Loss
+	training         	 (min:    0.016, max:    0.875, cur:    0.016)
+	validation       	 (min:    0.343, max:    0.565, cur:    0.494)
+  
+Model 10 is still better. Will revert to model 10 and double check results
+
+Model 10 re-run:
+accuracy
+	training         	 (min:    0.836, max:    1.000, cur:    1.000)
+	validation       	 (min:    0.849, max:    0.920, cur:    0.903)
+Loss
+	training         	 (min:    0.012, max:    0.644, cur:    0.012)
+	validation       	 (min:    0.354, max:    0.518, cur:    0.496)
+  
+Will try complex model now
+
+Complex 1:
+accuracy
+	training         	 (min:    0.833, max:    0.846, cur:    0.846)
+	validation       	 (min:    0.846, max:    0.846, cur:    0.846)
+Loss
+	training         	 (min:    0.999, max:    1.053, cur:    1.039)
+	validation       	 (min:    1.001, max:    1.039, cur:    1.039)
+  
+So the simple model is actually faster and more accurate with lower losses on all accounts. 
+
+Back to the simple model tomorrow for more improvements.
